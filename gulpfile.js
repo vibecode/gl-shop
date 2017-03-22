@@ -12,7 +12,7 @@ var path = require('path');
 var gulpIf = require('gulp-if');
 var sourcemaps = require('gulp-sourcemaps');
 
-var sass = require('gulp-sass');
+var scss = require('gulp-scss');
 var postcss = require('gulp-postcss');
 var assets = require('postcss-assets');
 var mqpacker = require('css-mqpacker');
@@ -70,7 +70,7 @@ gulp.task('svg', function() {
                     example: false,
                     render: {
                         scss: {
-                            dest: path.join(srcPath, 'sass/_global/svg-sprite.scss'),
+                            dest: path.join(srcPath, 'scss/_global/svg-sprite.scss'),
                         }
                     }
                 }
@@ -104,7 +104,7 @@ gulp.task('styletest', function() {
         })
     ];
 
-    return gulp.src(['!_global/svg-sprite.scss', '**/*.scss'], {cwd: path.join(srcPath, 'sass')})
+    return gulp.src(['!_global/svg-sprite.scss', '**/*.scss'], {cwd: path.join(srcPath, 'scss')})
         .pipe(plumber())
         .pipe(postcss(processors, {
             syntax: syntax_scss
@@ -113,12 +113,12 @@ gulp.task('styletest', function() {
 
 //************** STYLE **********************************************************************
 gulp.task('style', ['styletest'], function() {
-    gulp.src('style.scss', {cwd: path.join(srcPath, 'sass')})
+    gulp.src('style.scss', {cwd: path.join(srcPath, 'scss')})
         .pipe(plumber({
             errorHandler: notify.onError('Error:  <%= error.message %>')
         }))
         .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
-        .pipe(sass())
+        .pipe(scss())
         .pipe(postcss([
             mqpacker,
             flexboxfixer,
@@ -151,7 +151,7 @@ gulp.task('style', ['styletest'], function() {
 
 //************** DELETE **********************************************************************
 gulp.task('del', function() {
-    return del([path.join(buildPath), path.join(srcPath, 'sass/_global/svg-sprite.scss')]).then(paths => {
+    return del([path.join(buildPath), path.join(srcPath, 'scss/_global/svg-sprite.scss')]).then(paths => {
         console.log('Deleted files and folders:\n', paths.join('\n'));
     });
 });
@@ -197,7 +197,7 @@ gulp.task('default', allTasks, function() {
         gulp.watch('svg-sprite/*.svg', {cwd: path.join(srcPath, 'img')}, ['svg', server.reload]);
         gulp.watch(['!svg-sprite', '!svg-sprite/**', '!inline', '!inline/**', '**/*.{jpg,png,svg}'], {cwd: path.join(srcPath, 'img')}, ['img', server.reload]);
         gulp.watch('**/*{woff,woff2}', {cwd: path.join(srcPath, 'fonts')}, ['font', server.reload]);
-        gulp.watch('**/*.scss', {cwd: path.join(srcPath, 'sass')}, ['style', server.stream]);
+        gulp.watch('**/*.scss', {cwd: path.join(srcPath, 'scss')}, ['style', server.stream]);
         gulp.watch('*.html', {cwd: srcPath}, ['html', server.reload]);
     }
 });
