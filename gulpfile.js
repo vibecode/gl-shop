@@ -12,7 +12,7 @@ var path = require('path');
 var gulpIf = require('gulp-if');
 var sourcemaps = require('gulp-sourcemaps');
 
-var scss = require('gulp-scss');
+var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var assets = require('postcss-assets');
 var mqpacker = require('css-mqpacker');
@@ -98,10 +98,8 @@ gulp.task('html', function(){
 //************** STYLE LINT **********************************************************************
 gulp.task('styletest', function() {
     var processors = [
-        stylelint(),
-        reporter({
-            throwError: true
-        })
+      stylelint(),
+      reporter({ clearMessages: true })
     ];
 
     return gulp.src(['!_global/svg-sprite.scss', '**/*.scss'], {cwd: path.join(srcPath, 'scss')})
@@ -118,7 +116,7 @@ gulp.task('style', ['styletest'], function() {
             errorHandler: notify.onError('Error:  <%= error.message %>')
         }))
         .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
-        .pipe(scss())
+        .pipe(sass())
         .pipe(postcss([
             mqpacker,
             flexboxfixer,
