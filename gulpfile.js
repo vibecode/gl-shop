@@ -107,7 +107,11 @@ gulp.task('style', ['styletest'], function() {
     gulp.src('style.scss', {cwd: path.join(srcPath, 'scss')})
         .pipe(plumber())
         .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
-        .pipe(sass())
+        .pipe(sass({
+          // includePaths: require('node-normalize-scss').with('other/path', 'another/path')
+          // - or -
+          includePaths: require('node-normalize-scss').includePaths
+        }))
         .pipe(postcss([
             mqpacker,
             flexboxfixer,

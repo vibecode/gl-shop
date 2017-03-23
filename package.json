@@ -57,6 +57,7 @@
     "node": "^5.0.0"
   },
   "dependencies": {
-    "normalize.css": "^4.0.0"
+    "node-normalize-scss": "^1.4.0",
+    "normalize.css": "^5.0.0"
   }
 }
