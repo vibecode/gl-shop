@@ -6,7 +6,6 @@ var del = require('del');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var server = require('browser-sync');
-var notify = require('gulp-notify');
 var runSequence = require('run-sequence');
 var path = require('path');
 var gulpIf = require('gulp-if');
@@ -36,18 +35,12 @@ var ghPages = require('gulp-gh-pages');
 //************** JS **********************************************************************
 gulp.task('js', function() {
     gulp.src(['lib/**', 'modules/**', 'app.js'], {cwd: path.join(srcPath, 'js')})
-        .pipe(plumber({
-            errorHandler: notify.onError('Error: <%= error.message %>')
-        }))
+        .pipe(plumber())
         .pipe(concat('script.js'))
         .pipe(gulp.dest(path.join(buildPath, 'js')))
         .pipe(uglify())
         .pipe(rename('script.min.js'))
         .pipe(gulp.dest(path.join(buildPath, 'js')))
-        .pipe(notify({
-            message: 'JS: <%= file.relative %>',
-            sound: 'Pop'
-        }))
 });
 
 //************** IMG **********************************************************************
@@ -112,9 +105,7 @@ gulp.task('styletest', function() {
 //************** STYLE **********************************************************************
 gulp.task('style', ['styletest'], function() {
     gulp.src('style.scss', {cwd: path.join(srcPath, 'scss')})
-        .pipe(plumber({
-            errorHandler: notify.onError('Error:  <%= error.message %>')
-        }))
+        .pipe(plumber())
         .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
         .pipe(sass())
         .pipe(postcss([
@@ -140,11 +131,6 @@ gulp.task('style', ['styletest'], function() {
         .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
         .pipe(gulp.dest(path.join(buildPath, 'css')))
 
-        .pipe(server.stream({match: '**/*.css'}))
-        .pipe(notify({
-            message: 'Style: <%= file.relative %>',
-            sound: 'Pop'
-        }));
 });
 
 //************** DELETE **********************************************************************
