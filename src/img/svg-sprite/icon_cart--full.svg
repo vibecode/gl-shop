@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.12" height="10.25" viewBox="0 0 15.12 10.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ec573b;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Корзина_заполнена" data-name="Корзина заполнена" class="cls-1" d="M1076.5,32.375h15.12l-1.37,10.25-12.63-.125Z" transform="translate(-1076.5 -32.375)"/>
+</svg>

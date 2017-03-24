@@ -63,7 +63,7 @@ gulp.task('svg', function() {
                     example: false,
                     render: {
                         scss: {
-                            dest: path.join(srcPath, 'scss/_global/svg-sprite.scss'),
+                            dest: path.join(srcPath, 'scss/_svg-sprite.scss'),
                         }
                     }
                 }
