@@ -134,7 +134,7 @@ gulp.task('style', ['styletest'], function() {
         .pipe(rename('style.min.css'))
         .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
         .pipe(gulp.dest(path.join(buildPath, 'css')))
-
+        .pipe(server.stream())
 });
 
 //************** DELETE **********************************************************************
@@ -185,7 +185,7 @@ gulp.task('default', allTasks, function() {
         gulp.watch('svg-sprite/*.svg', {cwd: path.join(srcPath, 'img')}, ['svg', server.reload]);
         gulp.watch(['!svg-sprite', '!svg-sprite/**', '!inline', '!inline/**', '**/*.{jpg,png,svg}'], {cwd: path.join(srcPath, 'img')}, ['img', server.reload]);
         gulp.watch('**/*{woff,woff2}', {cwd: path.join(srcPath, 'fonts')}, ['font', server.reload]);
-        gulp.watch('**/*.scss', {cwd: path.join(srcPath, 'scss')}, ['style', server.stream]);
+        gulp.watch('**/*.scss', {cwd: path.join(srcPath, 'scss')}, ['style']);
         gulp.watch('*.html', {cwd: srcPath}, ['html', server.reload]);
     }
 });
