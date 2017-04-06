@@ -1,0 +1,45 @@
+.page-header {
+  padding-top: 9px;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    left: -5px;
+    width: 154px;
+    margin-right: 9px;
+  }
+
+  &__logo-svg {
+    fill: $c_logo;
+  }
+
+  &__phone {
+    position: absolute;
+    z-index: 1;
+    bottom: -48px;
+    right: -1px;
+    max-width: 200px;
+    height: 50px;
+    font-weight: $font-weight_bold;
+    color: $c_text_alt;
+  }
+
+  &__phone-time {
+    font-size: $font-size_s;
+    margin-bottom: 2px;
+  }
+
+  &__phone-number {
+    display: block;
+    font-size: $font-size_l;
+    font-weight: $font-weight_bold;
+    color: $c_text_alt;
+    text-decoration: none;
+  }
+}

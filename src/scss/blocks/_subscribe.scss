@@ -1,0 +1,54 @@
+.subscribe {
+  @include column(1/2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 232px;
+  padding: 29px 19px 33px 20px;
+  border-radius: 14px;
+  background-color: $bg_light;
+  border: 6px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(45deg, #f8f7f4, #f8f7f4),
+  repeating-linear-gradient(135deg, #f8f7f4, #f8f7f4 4px, #92cdff 5px, #92cdff 11px, #f8f7f4 12px, #f8f7f4 18px, #fe9e90 19px, #fe9e90 25px, #f8f7f4 26px, #f8f7f4 28px);
+
+  &__text {
+    font-size: $font-size_base;
+    font-weight: $font-weight_base;
+    color: $c_text_base;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__input {
+    @include clear-input;
+    @include input;
+    flex-grow: 1;
+    height: 44px;
+    padding: 11px;
+    font-size: $font-size_s;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    padding: 0 10px;
+  }
+
+  &__input-label {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__input-name {
+    top: 4px;
+    left: 11px;
+  }
+}

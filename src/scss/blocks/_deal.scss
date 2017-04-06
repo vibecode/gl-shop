@@ -1,0 +1,38 @@
+.deal {
+  @include column(1/2);
+  position: relative;
+  min-height: 229px;
+  padding: 12px 20px 70px;
+  border-radius: 12px;
+  color: $c_text_alt;
+  background-color: #6d1426;
+
+  &--raspberry {
+    background: #b40022 url(../img/bg_banner-1.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  &--chocolate {
+    background: #40261b url(../img/bg_banner-2.jpg);
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: $font-size_xl;
+    font-weight: $font-weight_bold;
+    color: $c_text_alt;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.26;
+    font-weight: $font-weight_bold;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 26px;
+    right: 21px;
+  }
+}

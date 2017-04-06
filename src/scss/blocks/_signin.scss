@@ -1,0 +1,113 @@
+.signin {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: 32px;
+  font-size: $font-size_base;
+
+  &__link {
+    position: relative;
+    z-index: 2;
+    display: block;
+    height: 32px;
+    min-width: 92px;
+    padding: 7px 7px 7px 42px;
+    text-align: left;
+    border-radius: 36px;
+    text-decoration: none;
+    font-weight: $font-weight_medium;
+    color: $c_text_alt;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  &:hover &__link,
+  &__link:hover,
+  &__link--active {
+    color: $c_text_base;
+    background-color: $bg_light;
+  }
+
+  &__link-svg {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    fill: currentColor;
+    fill-rule: evenodd;
+    transform: translateY(-50%);
+    transition: fill 0.2s;
+  }
+
+  &__item-link--singin {
+    min-width: 92px;
+    padding-left: 44px;
+    padding-right: 10px;
+  }
+
+  &__form-container {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: $shadow;
+    border-radius: 8px;
+    background-color: $bg_light;
+    opacity: 0;
+    transform: scale(0.5);
+    @include trans;
+    transition-delay: 0.5s;
+  }
+
+  &__form {
+    text-align: left;
+    padding: 30px;
+  }
+
+  &:hover &__form-container {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 700px;
+    transition-delay: 0.2s;
+  }
+
+  &__input {
+    @include clear-input;
+    @include input;
+    width: 241px;
+    height: 39px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    padding: 0 14px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 19px;
+    font-size: 13px;
+  }
+
+  &__form-link {
+    display: inline;
+    color: $c_link;
+
+    &:hover,
+    &:active {
+      color: $c_link_hover;
+    }
+  }
+}
+

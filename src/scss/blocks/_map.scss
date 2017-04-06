@@ -1,0 +1,47 @@
+.map {
+  height: 430px;
+  background: #ebe4c9 url(../img/bg_map.png) no-repeat;
+  background-size: cover;
+
+  .map__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 27px;
+  }
+
+  &__contact {
+    width: 302px;
+    min-height: 305px;
+    max-height: 410px;
+    padding: 29px 25px 10px;
+    border-radius: 15px;
+    background-color: $bg_light;
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 17px;
+    font-size: $font-size_s;
+    line-height: 20px;
+    font-weight: $font-weight_base;
+    color: $c_text_base;
+  }
+
+  &__text:last-of-type {
+    margin-bottom: 25px;
+  }
+
+  &__adress,
+  &__phone {
+    display: block;
+    margin-top: 3px;
+    font-size: $font-size_l;
+    font-weight: $font-weight_bold;
+    color: $c_text_base;
+  }
+
+  &__phone {
+    margin-bottom: 3px;
+  }
+}

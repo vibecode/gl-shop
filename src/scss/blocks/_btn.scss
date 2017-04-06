@@ -1,0 +1,52 @@
+.btn {
+  display: inline-block;
+  border: none;
+  text-align: center;
+  vertical-align: baseline;
+  line-height: 1;
+  outline: none;
+  overflow: hidden;
+  text-decoration: none;
+  max-width: 200px;
+  padding: 10px 25px;
+  font-size: 15px;
+  color: $c_text_alt;
+  background-image: $gr_btn;
+  border-radius: 16px;
+  box-shadow: 0 2px 2px 0 #ac1000;
+
+  &--middle {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 17px;
+  }
+
+  &--narrow {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  &--wide {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to top, #ec6f5e, #f58669);
+    box-shadow: 0 2px 2px 0 #ac1000;
+  }
+
+  &:active {
+    background-image: linear-gradient(to top, #e1613e, #d74632);
+    box-shadow: inset 0 2px 2px 0 #942718;
+  }
+
+  &--catalog-item {
+    min-width: 195px;
+    padding: 8px 20px;
+  }
+
+  &--map {
+    min-width: 100%;
+  }
+}

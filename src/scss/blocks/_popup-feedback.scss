@@ -1,0 +1,90 @@
+.popup-feedback {
+  display: none;
+  content: "";
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &__wrap {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 442px;
+    width: 477px;
+    padding: 17px 24px 27px;
+    border-radius: 10px;
+    background-color: $bg_light;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+    fill: $c_link;
+    cursor: pointer;
+  }
+
+  &__close:hover {
+    transform: rotate(180deg) scale(1.2);
+    fill:$c-link-hover;
+  }
+
+  &__close:active {
+    transform: rotate(180deg) scale(0.9);
+    fill: $c_link-active;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: $font-size_l;
+    font-weight: $font-weight_medium;
+  }
+
+  &__input {
+    @include clear-input;
+    @include input;
+    height: 44px;
+    width: 100%;
+    padding: 9px 21px;
+    margin-bottom: 30px;
+    font-weight: $font-weight_base;
+  }
+
+  &__input-name {
+    left: 19px;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    padding: 8px 20px;
+  }
+
+  &__input--textarea {
+    height: 155px;
+    padding: 9px 21px;
+
+  }
+
+  &__input--textarea + &__input-name {
+    top: -162px;
+  }
+
+  &__show {
+    animation-name: popup-show;
+    animation-duration: 1s;
+  }
+
+  &__static {
+    display: block;
+  }
+}

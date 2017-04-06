@@ -1,0 +1,117 @@
+.nav {
+  flex-grow: 1;
+
+  &__list {
+    @include clear-list;
+    margin-top: 14px;
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 32px;
+    font-size: $font-size_base;
+    font-weight: $font-weight_medium;
+    line-height: 1.4;
+    border-radius: 16px;
+  }
+
+  &__link--active {
+    background-color: $bg_sub-nav-act;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 5px 14px;
+    min-height: 32px;
+    line-height: 1.4;
+    color: $c_text_alt;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: background-color .2s, color .2s;
+  }
+
+  &__link:hover &__link-inner {
+    border-bottom: none;
+  }
+
+  &__link:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 20px;
+    width: 100%;
+  }
+
+  &__item--sub {
+    position: relative;
+  }
+
+  &__sub-list {
+    @include clear-list;
+    position: absolute;
+    z-index: 2;
+    top: 37px;
+    left: -7px;
+    width: 143px;
+    max-height: 0;
+    overflow: hidden;
+    font-size: $font-size_s;
+    font-weight: $font-weight_base;
+    border-radius: 5px;
+    background-color: $bg_light;
+    box-shadow: $shadow;
+    transform: scale(0.6);
+    transform-origin: 25% top;
+    opacity: 0;
+    @include trans;
+  }
+
+  &__sub-container::after {
+    content: "";
+    position: absolute;
+    border: 8px solid transparent;
+    border-bottom-color: $bg_light;
+    height: 0;
+    left: 30px;
+    top: 21px;
+    width: 1px;
+    opacity: 0;
+    transition: 0.1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  &__item--sub:hover &__sub-list {
+    max-height: 700px;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &__item--sub:hover &__sub-container::after {
+    opacity: 1;
+  }
+
+  &__sub-title,
+  &__sub-link {
+    display: block;
+    height: 33px;
+    padding-left: 20px;
+    padding-top: 8px;
+    text-decoration: none;
+    color: $c_text_base;
+  }
+
+  &__sub-item:last-of-type &__sub-link{
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &__sub-title {
+    position: relative;
+    height: 39px;
+    padding-top: 10px;
+    font-weight: $font-weight_medium;
+  }
+}

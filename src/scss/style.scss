@@ -1,8 +1,27 @@
 @import "normalize";
-@import "_variables";
-@import "_mixins";
-@import "_type";
-@import "_fonts";
-@import "_svg-sprite";
-@import "_animations";
+@import 'node_modules/jeet/scss/index';
+@import "variables";
+@import "mixins";
+@import "type";
+@import "svg-sprite";
+@import "animations";
+@import "base";
 
+//blocks
+@import "blocks/btn";
+@import "blocks/slider";
+@import "blocks/page";
+@import "blocks/page-header";
+@import "blocks/nav";
+@import "blocks/actions";
+@import "blocks/search";
+@import "blocks/signin";
+@import "blocks/cart";
+@import "blocks/deal";
+@import "blocks/catalog-item";
+@import "blocks/about-us";
+@import "blocks/info-blog";
+@import "blocks/subscribe";
+@import "blocks/map";
+@import "blocks/page-footer";
+@import "blocks/popup-feedback";
