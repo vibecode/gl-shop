@@ -15,10 +15,7 @@
     font-weight: $font-weight_medium;
     line-height: 1.4;
     border-radius: 16px;
-  }
-
-  &__link--active {
-    background-color: $bg_sub-nav-act;
+    transition: background-color .2s, color .2s;
   }
 
   &__link {
@@ -30,20 +27,15 @@
     color: $c_text_alt;
     text-decoration: none;
     border-radius: 16px;
-    transition: background-color .2s, color .2s;
   }
 
-  &__link:hover &__link-inner {
-    border-bottom: none;
+
+  &__item:not(:first-of-type):hover {
+    background-color: $bg_hover;
   }
 
-  &__link:hover::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    height: 20px;
-    width: 100%;
+  &__link--active {
+    background-color: $bg_sub-nav-act;
   }
 
   &__item--sub {
@@ -93,7 +85,16 @@
     opacity: 1;
   }
 
-  &__sub-title,
+  &__sub-title {
+    display: block;
+    position: relative;
+    height: 39px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: $font-weight_medium;
+    border-bottom: 1px solid rgba(219, 219, 219, 0.9);
+  }
+
   &__sub-link {
     display: block;
     height: 33px;
@@ -108,10 +109,12 @@
     border-bottom-left-radius: 5px;
   }
 
-  &__sub-title {
-    position: relative;
-    height: 39px;
-    padding-top: 10px;
-    font-weight: $font-weight_medium;
+  &__sub-link:hover {
+    background-color: $c_link-hover-alt;
+    color: $c_text_alt;
+  }
+
+  &__sub-link:active {
+    background-color: $c_link-active_alt;
   }
 }

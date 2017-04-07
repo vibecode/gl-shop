@@ -1,5 +1,5 @@
 .catalog-item {
-  @include column(1/4);
+  @include column(1/4, $cycle: 4);
   position: relative;
   text-align: center;
 
