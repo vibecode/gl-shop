@@ -1,0 +1,300 @@
+.sorting {
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  &__item {
+    position: relative;
+    min-height: 36px;
+    margin-right: 16px;
+    margin-bottom: 38px;
+    border-radius: 18px;
+    font-weight: $font-weight-medium;
+    color: $c_text_alt;
+    background-color: rgba(248, 247, 244, 0.2);
+  }
+
+  &__title {
+    position: absolute;
+    top: -22px;
+    left: 16px;
+    font-size: $font-size_s;
+    font-weight: $font-weight-medium;
+    color: $c_text_alt;
+  }
+
+  &__item--options {
+    width: 193px;
+    padding: 0;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+
+  &__select {
+    position: relative;
+    display: block;
+    height: 36px;
+    padding: 5px 8px 5px 16px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: none;
+    background: transparent none;
+    appearance: none;
+    outline: none;
+    font-size: $font-size_base;
+    font-weight: $font-weight-medium;
+    text-indent: 0.01px;
+    text-overflow: "";
+    color: $c_text_alt;
+    cursor: pointer;
+
+    &::-moz-focus-inner {
+      border:0;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $c_text_base;
+      background-color: $bg_light;
+    }
+
+    &-icon {
+      content: "";
+      position: absolute;
+      top: 16px;
+      right: 13px;
+      border: 5px solid transparent;
+      border-top-color: #fff;
+      cursor: pointer;
+      pointer-events:none;
+    }
+
+    &:focus + &-icon,
+    &:hover + &-icon {
+      border-top-color: $c_text_base;
+    }
+  }
+
+  &__item--range-filter {
+    position: relative;
+    width: 220px;
+  }
+
+  &__range-scale {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 188px;
+    height: 4px;
+    background-color: rgba(248, 247, 244,0.5);
+    transform:translate(-50%,-50%);
+  }
+
+  &__range-bar {
+    position: absolute;
+    left: 35px;
+    width: 96px;
+    height: 4px;
+    background-color: $bg_light;
+  }
+
+  &__range-toggle {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transform:translateY(-50%);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: $bg_light;
+    cursor: pointer;
+  }
+
+  &__range-toggle {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transform:translateY(-50%);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  &__range-toggle--max {
+    left: 131px;
+  }
+
+  &__item--fat {
+    min-width: 415px;
+  }
+
+  &__fat-list {
+    @include clear-list;
+    font-size: 0;
+    padding-left: 12px;
+  }
+
+  &__fat-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 36px;
+    margin-right: 18px;
+    padding-top: 9px;
+    padding-left: 31px;
+    font-size: $font-size_base;
+  }
+
+  &__fat-input {
+    display: none;
+  }
+
+  &__fat-circle {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $bg_light;
+    transform:translateY(-50%);
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      transform:translate(-50%,-50%) scale(0);
+      background-color: $bg_light;
+      transition: transform 0.2s;
+    }
+  }
+
+  &__fat-input[id="fat-1"]:checked + &__fat-label[for="fat-1"] &__fat-circle::after,
+  &__fat-input[id="fat-2"]:checked + &__fat-label[for="fat-2"] &__fat-circle::after,
+  &__fat-input[id="fat-3"]:checked + &__fat-label[for="fat-3"] &__fat-circle::after,
+  &__fat-input[id="fat-4"]:checked + &__fat-label[for="fat-4"] &__fat-circle::after {
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+  &__fat-input:not(:disabled) + &__fat-label &__fat-circle:hover {
+    border-width: 2px;
+  }
+
+  &__fat-input:disabled + &__fat-label &__fat-circle {
+    border-color: rgba(248, 247, 244, 0.4);
+    cursor: default;
+  }
+
+  &__fat-input:disabled + &__fat-label &__fat-circle::after {
+    background-color: rgba(248, 247, 244, 0.4);
+  }
+
+  &__filler-list {
+    @include clear-list;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 702px;
+    padding-left: 16px;
+
+  }
+
+  &__filler-item {
+    position: relative;
+    height: 36px;
+    margin-right: 18px;
+    padding-top: 9px;
+    padding-left: 34px;
+    font-size: $font-size_base;
+  }
+
+  &__filler-input {
+    display: none;
+  }
+
+  &__filler-checkbox {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid $bg_light;
+    transform:translateY(-50%);
+    cursor: pointer;
+  }
+
+  &__filler-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 7px;
+    height: 11px;
+    border-right: 2px solid $bg_light;
+    border-bottom: 2px solid $bg_light;
+    transform:translate(-50%,-50%) rotate(0deg) scale(0);
+    transition: transform 0.2s;
+  }
+
+  &__filler-input[id="filler-1"]:checked + &__filler-label[for="filler-1"] &__filler-checkbox::after,
+  &__filler-input[id="filler-2"]:checked + &__filler-label[for="filler-2"] &__filler-checkbox::after,
+  &__filler-input[id="filler-3"]:checked + &__filler-label[for="filler-3"] &__filler-checkbox::after,
+  &__filler-input[id="filler-4"]:checked + &__filler-label[for="filler-4"] &__filler-checkbox::after,
+  &__filler-input[id="filler-5"]:checked + &__filler-label[for="filler-5"] &__filler-checkbox::after {
+    transform:translate(-50%,-50%) rotate(45deg) scale(1);
+  }
+
+  &__filler-input:not(:disabled) + &__filler-label &__filler-checkbox:hover {
+    border-width: 2px;
+  }
+
+  &__filler-input:disabled + &__filler-label &__filler-checkbox {
+    border-color: rgba(248, 247, 244, 0.4);
+    cursor: default;
+  }
+
+  &__filler-input:disabled + &__filler-label &__filler-checkbox::after {
+    border-color: rgba(248, 247, 244, 0.4);
+  }
+
+  &__item--btn {
+    @include clear-input;
+    width: 144px;
+    border: 2px solid $bg_light;
+    transition: background-color 0.2s ease;
+  }
+
+
+  &__item--btn:hover {
+    color: $c_text_base;
+    background-color: $bg_light;
+    border: none;
+  }
+
+  &__item--btn:active {
+    color: $c_text_base;
+    background-color: $bg_light;
+    border: none;
+    box-shadow: inset 0 2px 1px 0 #696969;
+  }
+}

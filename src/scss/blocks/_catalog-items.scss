@@ -1,0 +1,8 @@
+.catalog-items{
+  @include clearfix;
+  position: relative;
+
+  .catalog-item {
+    margin-bottom: 60px;
+  }
+}

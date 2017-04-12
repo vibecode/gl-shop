@@ -1,0 +1,34 @@
+.breadcrumbs {
+  @include clear-list;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-bottom: 5px;
+  max-width: 70%;
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: $font-weight_base;
+    color: $c_text_alt;
+  }
+
+  &__item:not(:last-child)::after {
+    position: absolute;
+    top: 0;
+    right: -13px;
+    content:"\00BB";
+  }
+
+  &__link {
+    display: inline;
+    color: $c_text_alt;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $c_link-active;
+    }
+  }
+}
