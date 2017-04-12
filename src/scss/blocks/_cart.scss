@@ -104,25 +104,25 @@
 
   &__td {
     padding: 12px 5px;
-  }
 
-  &__td:nth-child(1) {
-    width: 20px;
-    padding-left: 2px;
-  }
+    &:nth-child(1) {
+      width: 20px;
+      padding-left: 2px;
+    }
 
-  &__td:nth-child(2) {
-    width: 34px;
-  }
+    &:nth-child(2) {
+      width: 34px;
+    }
 
-  &__td:nth-child(3) {
-    width: 120px;
-    text-align: left;
-  }
+    &:nth-child(3) {
+      width: 120px;
+      text-align: left;
+    }
 
-  &__td:nth-child(4) {
-    width: 83px;
-    text-align: right;
+    &:nth-child(4) {
+      width: 83px;
+      text-align: right;
+    }
   }
 
   &__table-link {
@@ -135,22 +135,21 @@
     fill-rule: nonzero;
     cursor: pointer;
     transition: all 0.2s;
-  }
 
-  &__del-svg:hover {
-    fill:$c_link-hover;
-    transform: rotate(180deg) scale(1.5);
-  }
+    &:hover {
+      fill:$c_link-hover;
+      transform: rotate(180deg) scale(1.5);
+    }
 
-  &__del-svg:active {
-    fill:$c_link-active;
-    transform: rotate(180deg) scale(1.3);
+    &:active {
+      fill:$c_link-active;
+      transform: rotate(180deg) scale(1.3);
+    }
   }
 
   &__price {
     color: #7f7f7f;
   }
-
 
   &__line {
     margin-bottom: 15px;

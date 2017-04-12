@@ -35,11 +35,11 @@
     height: 44px;
     padding: 11px;
     font-size: $font-size_s;
-  }
 
-  &__input:hover,
-  &__input:focus {
-    padding: 0 10px;
+    &:hover,
+    &:focus {
+      padding: 0 10px;
+    }
   }
 
   &__input-label {

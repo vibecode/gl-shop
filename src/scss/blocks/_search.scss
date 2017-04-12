@@ -76,11 +76,11 @@
     height: 39px;
     padding: 0 11px;
     font-size: 14px;
-  }
 
-  &__input:hover,
-  &__input:focus {
-    padding: 0 10px;
+    &:hover,
+    &:focus {
+      padding: 0 10px;
+    }
   }
 
   &__btn {

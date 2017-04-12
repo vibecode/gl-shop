@@ -17,10 +17,10 @@
     line-height: 1.4;
     border-radius: 16px;
     transition: background-color .2s, color .2s;
-  }
 
-  &__item:hover {
-    background-color: $bg_hover;
+    &:hover {
+      background-color: $bg_hover;
+    }
   }
 
   &__link {
@@ -106,18 +106,18 @@
     padding-top: 8px;
     text-decoration: none;
     color: $c_text_base;
+
+    &:hover {
+      background-color: $c_link-hover-alt;
+      color: $c_text_alt;
+    }
+
+    &:active {
+      background-color: $c_link-active_alt;
+    }
   }
 
-  &__sub-link:hover {
-    background-color: $c_link-hover-alt;
-    color: $c_text_alt;
-  }
-
-  &__sub-link:active {
-    background-color: $c_link-active_alt;
-  }
-
-  &__sub-item:last-of-type &__sub-link{
+  &__sub-item:last-of-type &__sub-link {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
   }

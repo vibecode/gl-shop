@@ -30,10 +30,10 @@
     line-height: 20px;
     font-weight: $font-weight_base;
     color: $c_text_base;
-  }
 
-  &__text:last-of-type {
-    margin-bottom: 25px;
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
   }
 
   &__adress,

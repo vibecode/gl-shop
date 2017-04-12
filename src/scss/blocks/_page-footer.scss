@@ -17,7 +17,7 @@
 
   &__social-link {
     display: block;
-    font:0/0 a;
+    font: 0/0 a;
     width: 31px;
     height: 31px;
     margin-right: 14px;
@@ -33,12 +33,12 @@
 
   &__social-link:hover,
   &__social-link:active {
-    box-shadow: 0 0 0  4px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.7);
   }
 
   &__social-link:active {
     box-shadow: inset 0 2px 1px 0px #888888,
-    0 0 0  4px rgba(255, 255, 255, 0.7);
+    0 0 0 4px rgba(255, 255, 255, 0.7);
   }
 
   &__social-link:hover &__link-svg {

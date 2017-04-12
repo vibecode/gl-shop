@@ -27,10 +27,15 @@
     text-align: center;
     color: $c_text_alt;
     text-decoration: none;
-  }
 
-  &__link:not(.catalog-pagination__link--current):hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    &:not(&--current):hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &:active {
+      background-color: $c_text_alt;
+      color: $c_text_base;
+    }
   }
 
   &__link-prev,
@@ -71,9 +76,7 @@
     cursor: default;
   }
 
-  &__link--current,
-  &__link:active,
-  &__link:active:hover {
+  &__link--current {
     background-color: $c_text_alt;
     color: $c_text_base;
   }

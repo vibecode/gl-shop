@@ -48,7 +48,7 @@
     font-weight: $font-weight_bold;
     text-shadow: 0 1px 3px rgba(49, 50, 53, 0.5);
 
-    & small{
+    & small {
       font-size: 66%;
     }
   }
@@ -74,8 +74,6 @@
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
   }
-
-
 
   &:hover &__btn {
     animation-name: bounceInUp;

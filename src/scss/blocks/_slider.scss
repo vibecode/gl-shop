@@ -53,14 +53,14 @@
     border: 2px solid $bg_light;
     cursor: pointer;
     transition: background-color 0.2s;
-  }
 
-  &__toggle:hover {
-    background-color: $bg_light;
-  }
+    &:hover {
+      background-color: $bg_light;
+    }
 
-  &__toggle:active {
-    background-color: $bg_light;
+    &:active {
+      background-color: $bg_light;
+    }
   }
 
   &-input[id="toggle-1"]:checked ~ .page &__slide--1 {

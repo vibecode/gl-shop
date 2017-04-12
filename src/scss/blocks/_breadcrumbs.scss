@@ -12,13 +12,13 @@
     font-size: 14px;
     font-weight: $font-weight_base;
     color: $c_text_alt;
-  }
 
-  &__item:not(:last-child)::after {
-    position: absolute;
-    top: 0;
-    right: -13px;
-    content:"\00BB";
+    &:not(:last-child)::after {
+      position: absolute;
+      top: 0;
+      right: -13px;
+      content:"\00BB";
+    }
   }
 
   &__link {

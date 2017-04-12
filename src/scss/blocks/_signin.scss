@@ -79,11 +79,11 @@
     margin-bottom: 25px;
     padding: 0 15px;
     font-size: 14px;
-  }
 
-  &__input:hover,
-  &__input:focus {
-    padding: 0 14px;
+    &:hover,
+    &:focus {
+      padding: 0 14px;
+    }
   }
 
   &__buttons {

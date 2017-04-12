@@ -58,15 +58,15 @@
     padding: 9px 21px;
     margin-bottom: 30px;
     font-weight: $font-weight_base;
+
+    &:hover,
+    &:focus {
+      padding: 8px 20px;
+    }
   }
 
   &__input-name {
     left: 19px;
-  }
-
-  &__input:hover,
-  &__input:focus {
-    padding: 8px 20px;
   }
 
   &__input--textarea {
