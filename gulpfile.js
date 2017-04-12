@@ -34,7 +34,7 @@ var ghPages = require('gulp-gh-pages');
 
 //************** JS **********************************************************************
 gulp.task('js', function() {
-    gulp.src(['lib/**', 'modules/**', 'app.js'], {cwd: path.join(srcPath, 'js')})
+    gulp.src(['lib/**', 'modules/**', '*.js'], {cwd: path.join(srcPath, 'js')})
         .pipe(plumber())
         .pipe(concat('script.js'))
         .pipe(gulp.dest(path.join(buildPath, 'js')))
