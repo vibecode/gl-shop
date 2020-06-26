@@ -80,6 +80,10 @@
     padding: 0 15px;
     font-size: 14px;
 
+    &-label {
+      margin-right: 0px;
+    }
+
     &:hover,
     &:focus {
       padding: 0 14px;
@@ -110,4 +114,3 @@
     }
   }
 }
-

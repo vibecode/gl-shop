@@ -21,8 +21,8 @@
 
 @mixin trans {
   transition: max-height 0.15s linear,
-  0.1s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
-  0.15s transform cubic-bezier(0.1, 1.26, 0.83, 1);
+    0.1s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
+    0.15s transform cubic-bezier(0.1, 1.26, 0.83, 1);
 }
 
 @mixin input {
@@ -44,12 +44,13 @@
 
   &-label {
     position: relative;
+    display: inline-block;
     margin-right: 10px;
   }
 
   &-name {
     position: absolute;
-    top: -3px;
+    top: 6px;
     left: 17px;
     display: block;
     max-width: 100%;
